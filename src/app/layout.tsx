@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { Header } from "@/components/layout/Header";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -48,13 +51,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${syne.variable} scroll-smooth`}>
+    <html lang="fr" className={`${inter.variable} ${syne.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <Script
+          id="theme-script"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.getItem('theme') === 'light') {
+                  document.documentElement.classList.remove('dark');
+                } else {
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
       </head>
       <body className="font-sans bg-background text-foreground overflow-x-hidden antialiased md:cursor-none">
-        <CustomCursor />
-        {children}
+        <ThemeProvider>
+          <CustomCursor />
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

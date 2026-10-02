@@ -5,6 +5,7 @@ export const projects = [
     status: "Finished",
     date: "Oct. 2025 - March 2026",
     icon: "fa-solid fa-code",
+    category: "Web Dev",
     mainPicture: "/assets/img/Projects/ProjectCube/CubeMain.jpg",
     description:
       "University team project: Complete Website Conception, Development, and SQL Database Architecture with integrated GDPR Compliance.",
@@ -41,6 +42,7 @@ export const projects = [
     status: "Finished",
     date: "Dec 2024",
     icon: "fa-solid fa-code",
+    category: "Software",
     mainPicture: "/assets/img/Projects/ProjectGame/GameMain.png",
     description:
       'University team project: Development of a C# video game focused on "Pancakes", including gameplay mechanics, character design, and interactive elements.',
@@ -65,6 +67,7 @@ export const projects = [
     status: "Finished",
     date: "Mar - April 2025",
     icon: "fa-solid fa-database",
+    category: "Data & DB",
     mainPicture: "/assets/img/Projects/ProjectData/DataMain.png",
     description:
       "The project involved the full lifecycle of database development, from conceptual design and data insertion to advanced querying, statistical analysis, and dynamic data visualization for a research laboratory's management system.",
@@ -104,6 +107,7 @@ export const projects = [
     status: "Finished",
     date: "Oct - Nov 2025",
     icon: "fa-solid fa-code",
+    category: "Web Dev",
     mainPicture: "/assets/img/Projects/ProjectPortfolio/PortfolioMain.png",
     description:
       "This project is a personal portfolio built using HTML, CSS, JavaScript, and PHP. Its goal is to showcase my skills, projects, and experience through a clean and responsive interface. The website features dynamic sections, smooth interactions, and a simple backend structure, offering an efficient and modern way to present my work as a developer.",
@@ -193,9 +197,16 @@ export const miscData = [
 
 export const formationsData = [
   {
+      title: "Fullstack & DevOps Developer Apprentice",
+      date: "June 2025 - PRESENT",
+      details: "Internship & Work-study program (**Current**).",
+      school: "Conseil départemental de la Haute-Savoie",
+      iconClass: "fas fa-laptop-code"
+  },
+  {
       title: "BUT Informatique - work-study (Technical Bachelor's Degree in computer science)",
       date: "2024 - PRESENT",
-      details: "In progress – 3rd year", // Fixed '3nd' to '3rd'
+      details: "In progress – 3rd year", 
       school: "University of Savoy / Tetras – Annecy-le-Vieux, France",
       iconClass: "fas fa-graduation-cap"
   },

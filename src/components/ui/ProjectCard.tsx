@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/Button";
 
 interface ProjectDetail {
   image: string;
@@ -31,13 +32,9 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
   return (
     <motion.div
       className={cn(
-        "flex flex-col border border-foreground/10 bg-white/[0.02] rounded-xl overflow-hidden hoverable group",
+        "flex flex-col h-full border border-foreground/10 bg-foreground/[0.04] shadow-xl shadow-black/10 dark:shadow-black/40 backdrop-blur-md rounded-xl overflow-hidden hoverable group",
         className
       )}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-foreground/10">
         <Image
@@ -71,17 +68,18 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
           ))}
         </div>
 
-        <a
+        <Button
+          variant="secondary"
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full text-center py-3 text-xs font-bold uppercase tracking-widest border border-foreground/20 hover:border-foreground bg-white/5 hover:bg-foreground hover:text-background transition-all rounded-sm flex items-center justify-center gap-2"
+          className="w-full mt-auto"
         >
           View Project
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M7 17l9.2-9.2M17 17V7H7" />
           </svg>
-        </a>
+        </Button>
       </div>
     </motion.div>
   );

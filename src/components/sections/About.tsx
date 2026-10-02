@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { benefits, technologies, languagesData, miscData } from "@/lib/data";
+import { Button } from "@/components/ui/Button";
 
 export function About() {
   const devTech = technologies.filter(t => t.category === "developpement");
@@ -20,7 +21,7 @@ export function About() {
         
         {/* Card 1: Bio */}
         <motion.div 
-          className="md:col-span-12 lg:col-span-5 border border-foreground/10 bg-white/[0.02] rounded-xl p-8 flex flex-col justify-between"
+          className="md:col-span-12 lg:col-span-5 border border-foreground/10 bg-foreground/[0.03] shadow-xl shadow-black/5 dark:shadow-black/20 backdrop-blur-sm rounded-xl p-8 flex flex-col justify-between"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -29,26 +30,26 @@ export function About() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
               <h3 className="font-heading text-xl uppercase font-bold tracking-widest">
-                The Dev
+                Profile
               </h3>
             </div>
             <p className="text-foreground/80 font-light leading-relaxed text-lg mb-6">
-              Je suis un développeur passionné par la création d'expériences web interactives, alliant design minimaliste et performances techniques. Toujours en quête d'apprentissage, j'aime résoudre des problèmes complexes et construire des applications robustes.
+              Currently in my 3rd year of a Computer Science degree (BUT) at IUT Annecy, I am a versatile Software, Full-Stack, and DevOps developer. I build robust applications and interactive web experiences that blend intuitive design with peak technical performance. From architecting efficient databases to orchestrating seamless deployments, I thrive on solving complex problems and driving projects from concept to production.
             </p>
           </div>
-          <button className="w-full py-4 text-xs font-bold uppercase tracking-widest border border-foreground/20 hover:border-foreground bg-white/5 hover:bg-foreground hover:text-background transition-all rounded-sm flex justify-center items-center gap-2">
-            Download Resume (PDF)
+          <Button variant="secondary" href="/assets/files/INTERNATIONAL-CV.pdf" target="_blank" className="w-full mt-auto">
+            Download CV (PDF)
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-          </button>
+          </Button>
         </motion.div>
 
         {/* Card 2: Technical Skills */}
         <motion.div 
-          className="md:col-span-12 lg:col-span-7 border border-foreground/10 bg-white/[0.02] rounded-xl p-8"
+          className="md:col-span-12 lg:col-span-7 border border-foreground/10 bg-foreground/[0.04] shadow-xl shadow-black/10 dark:shadow-black/40 backdrop-blur-md rounded-xl p-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -59,7 +60,7 @@ export function About() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
             <h3 className="font-heading text-xl uppercase font-bold tracking-widest">
-              Technical Stack
+              Hard Skills
             </h3>
           </div>
 
@@ -68,7 +69,7 @@ export function About() {
               <h4 className="text-[10px] uppercase text-foreground/50 font-bold mb-3 tracking-widest">Development</h4>
               <div className="flex flex-wrap gap-2">
                 {devTech.map((tech) => (
-                  <span key={tech.name} className="px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase border border-foreground/10 rounded bg-white/5 text-foreground/90">
+                  <span key={tech.name} className="px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase border border-foreground/10 rounded bg-foreground/5 text-foreground/90">
                     {tech.name}
                   </span>
                 ))}
@@ -78,7 +79,7 @@ export function About() {
               <h4 className="text-[10px] uppercase text-foreground/50 font-bold mb-3 tracking-widest">Systems & DevOps</h4>
               <div className="flex flex-wrap gap-2">
                 {sysTech.map((tech) => (
-                  <span key={tech.name} className="px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase border border-foreground/10 rounded bg-white/5 text-foreground/90">
+                  <span key={tech.name} className="px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase border border-foreground/10 rounded bg-foreground/5 text-foreground/90">
                     {tech.name}
                   </span>
                 ))}
@@ -88,7 +89,7 @@ export function About() {
               <h4 className="text-[10px] uppercase text-foreground/50 font-bold mb-3 tracking-widest">Databases</h4>
               <div className="flex flex-wrap gap-2">
                 {dbTech.map((tech) => (
-                  <span key={tech.name} className="px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase border border-foreground/10 rounded bg-white/5 text-foreground/90">
+                  <span key={tech.name} className="px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase border border-foreground/10 rounded bg-foreground/5 text-foreground/90">
                     {tech.name}
                   </span>
                 ))}
@@ -99,7 +100,7 @@ export function About() {
 
         {/* Card 3: Soft Skills */}
         <motion.div 
-          className="md:col-span-12 border border-foreground/10 bg-white/[0.02] rounded-xl p-8"
+          className="md:col-span-12 border border-foreground/10 bg-foreground/[0.04] shadow-xl shadow-black/10 dark:shadow-black/40 backdrop-blur-md rounded-xl p-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -135,7 +136,7 @@ export function About() {
 
         {/* Card 4: Languages */}
         <motion.div 
-          className="md:col-span-12 lg:col-span-5 border border-foreground/10 bg-white/[0.02] rounded-xl p-8"
+          className="md:col-span-12 lg:col-span-5 border border-foreground/10 bg-foreground/[0.04] shadow-xl shadow-black/10 dark:shadow-black/40 backdrop-blur-md rounded-xl p-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -157,7 +158,7 @@ export function About() {
                   <span className="font-bold uppercase tracking-wider text-sm">{lang.name}</span>
                   <span className="text-[10px] text-foreground/50 tracking-widest uppercase font-bold">{lang.level}</span>
                 </div>
-                <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+                <div className="w-full h-1 bg-foreground/5 rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-foreground/30 rounded-full"
                     style={{ width: `${lang.percent}%` }}
@@ -170,7 +171,7 @@ export function About() {
 
         {/* Card 5: Interests */}
         <motion.div 
-          className="md:col-span-12 lg:col-span-7 border border-foreground/10 bg-white/[0.02] rounded-xl p-8"
+          className="md:col-span-12 lg:col-span-7 border border-foreground/10 bg-foreground/[0.04] shadow-xl shadow-black/10 dark:shadow-black/40 backdrop-blur-md rounded-xl p-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Syne } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Header } from "@/components/layout/Header";
-import Script from "next/script";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,37 +47,40 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  const messages = await getMessages();
+
   return (
-    <html lang="fr" className={`${inter.variable} ${syne.variable} scroll-smooth`} suppressHydrationWarning>
+    <html lang={locale} data-scroll-behavior="smooth" className={`${inter.variable} ${syne.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <Script
-          id="theme-script"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.getItem('theme') === 'light') {
-                  document.documentElement.classList.remove('dark');
-                } else {
-                  document.documentElement.classList.add('dark');
-                }
-              } catch (_) {}
-            `,
-          }}
-        />
+        <Script id="theme-initializer" strategy="afterInteractive">
+          {`
+            try {
+              if (localStorage.getItem('theme') === 'light') {
+                document.documentElement.classList.remove('dark');
+              } else {
+                document.documentElement.classList.add('dark');
+              }
+            } catch (_) {}
+          `}
+        </Script>
       </head>
       <body className="font-sans bg-background text-foreground overflow-x-hidden antialiased md:cursor-none">
-        <ThemeProvider>
-          <CustomCursor />
-          <Header />
-          {children}
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider>
+            <CustomCursor />
+            <Header />
+            {children}
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

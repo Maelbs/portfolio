@@ -1,0 +1,183 @@
+{
+  "Hero": {
+    "subtitle": "Maël Bouvier Sobrino",
+    "description": "Je suis un étudiant en informatique polyvalent, spécialisé dans le développement logiciel et web, cherchant à créer des projets innovants.",
+    "buttonWorks": "Découvrir mes projets",
+    "buttonCV": "Télécharger CV"
+  },
+  "Navigation": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "works": "Projets",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "stack": "Next.js • Tailwind CSS • Framer Motion"
+  },
+  "Contact": {
+    "idea": "Vous avez une idée ?",
+    "title": "Travaillons ensemble",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé !",
+    "successDesc": "Message envoyé avec succès ! Je vous recontacterai bientôt.",
+    "sendAnother": "Envoyer un autre message",
+    "error": "Une erreur s'est produite."
+  },
+  "Sections": {
+    "about": "À propos de moi",
+    "aboutDesc": "Passionné par la technologie, le développement et le design.",
+    "experience": "Expérience et Formation",
+    "experienceDesc": "Mon parcours académique et professionnel.",
+    "works": "Mes Projets",
+    "worksDesc": "Une sélection de mes travaux récents.",
+    "all": "Tous",
+    "viewProject": "Voir le Projet",
+    "profileTitle": "Profil",
+    "profileDesc": "Actuellement en 3ème année de BUT Informatique à l'IUT d'Annecy, je suis un développeur polyvalent (Logiciel, Full-Stack et DevOps). Je conçois des applications robustes et des expériences web interactives alliant design intuitif et performances techniques. De l'architecture de bases de données au déploiement, j'aime résoudre des problèmes complexes et mener les projets de la conception à la production.",
+    "downloadCV": "Télécharger CV (PDF)",
+    "hardSkills": "Compétences Techniques",
+    "softSkills": "Savoir-être",
+    "languages": "Langues",
+    "interests": "Centres d'intérêt",
+    "dev": "Développement",
+    "sys": "Systèmes & DevOps",
+    "db": "Bases de Données"
+  },
+  "Data": {
+    "projects": [
+      {
+        "title": "Projet de site web CUBE",
+        "status": "Terminé",
+        "date": "Oct. 2025 - Mars 2026",
+        "category": "Dév Web",
+        "description": "Projet universitaire en équipe : Conception et développement complet d'un site web, architecture de base de données SQL avec conformité RGPD.",
+        "details": [
+          "Conception UML : La phase de conception a commencé par la création d'un diagramme de cas d'utilisation pour modéliser les exigences, suivi d'un diagramme de classes pour détailler la structure statique, et d'un diagramme BPMN pour cartographier les processus métiers.",
+          "Conception de Base de Données (Merise) : Développement du Modèle Conceptuel de Données (MCD) suivi de la dérivation en Modèle Logique de Données (MLD).",
+          "Implémentation SQL : Traduction du modèle en structure de base de données, écriture des requêtes d'insertion et intégration de règles d'intégrité avancées via des contraintes CHECK et des déclencheurs (TRIGGERS)."
+        ],
+        "techStack": [
+          "PHP/Laravel",
+          "UML",
+          "Merise",
+          "PostgreSQL",
+          "Développement web",
+          "Cryptographie"
+        ]
+      },
+      {
+        "title": "Projet de réalisation d'un jeu vidéo",
+        "status": "Terminé",
+        "date": "Déc 2024",
+        "category": "Logiciel",
+        "description": "Projet universitaire en équipe : Développement d'un jeu vidéo en C# centré sur les 'Pancakes', incluant mécaniques de jeu et design des personnages.",
+        "details": [
+          "Conception du modèle : Conception UML initiale, modélisation des classes de personnages et planification des algorithmes de gameplay et d'interaction.",
+          "Développement & Design : Développement complet en C# avec interface graphique (WinForms / WPF), gestion des événements et sprites de personnages personnalisés."
+        ],
+        "techStack": [
+          "C#",
+          ".NET",
+          "Architecture Logicielle",
+          "UML",
+          "Game Design"
+        ]
+      },
+      {
+        "title": "Projet de création de base de données",
+        "status": "Terminé",
+        "date": "Dec - Jan 2024",
+        "category": "Bases de Données",
+        "description": "Projet universitaire en équipe : À partir de données réelles non formatées représentant un laboratoire de recherche, notre tâche était de conceptualiser et de développer une base de données PostgreSQL complète.",
+        "details": [
+          "Modélisation conceptuelle et création : Conception de la structure avec le MCD et le MLD, puis génération du script SQL.",
+          "Manipulation et insertion de données : Chargement de fichiers (SQL, Excel/CSV) puis peuplement des grandes tables via jointures croisées.",
+          "Requêtes SQL : Écriture et exécution de requêtes SQL complexes pour des besoins analytiques spécifiques.",
+          "Tests statistiques : Analyse statistique via une vue SQL exportée sur Excel (moyenne, médiane, quartiles).",
+          "DataViz avec PowerBI : Création de rapports dynamiques de visualisation de données présentés à des professionnels."
+        ],
+        "techStack": [
+          "Merise",
+          "PostgreSQL",
+          "Excel",
+          "PowerBi"
+        ]
+      },
+      {
+        "title": "Projet de portfolio web",
+        "status": "Terminé",
+        "date": "Oct - Nov 2025",
+        "category": "Dév Web",
+        "description": "Ce projet est un portfolio personnel construit avec HTML, CSS, JavaScript et PHP. Son but est de présenter mes compétences et projets avec une interface épurée.",
+        "details": [],
+        "techStack": [
+          "Web design / development",
+          "PHP/Laravel"
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "name": "Excellentes capacités de résolution de problèmes",
+        "description": "Habitué à analyser des situations complexes et proposer des solutions efficaces adaptées aux besoins du projet."
+      },
+      {
+        "name": "Forte passion pour l'apprentissage",
+        "description": "Curieux et motivé pour explorer de nouveaux outils et technologies afin d'améliorer continuellement mes pratiques."
+      },
+      {
+        "name": "Excellente communication",
+        "description": "La communication est essentielle. Je crois en la transparence et à l'échange constructif avant tout."
+      }
+    ],
+    "languages": [
+      {
+        "name": "Français",
+        "level": "Langue maternelle"
+      },
+      {
+        "name": "Anglais",
+        "level": "Intermédiaire / Avancé"
+      },
+      {
+        "name": "Espagnol",
+        "level": "Intermédiaire"
+      }
+    ],
+    "misc": [
+      {
+        "text": "J'adore le VTT, en particulier les montées."
+      },
+      {
+        "text": "J'aime apprendre les langues, surtout la langue des signes et le japonais."
+      },
+      {
+        "text": "J'aime apprendre les instruments de musique comme la guitare et le piano."
+      }
+    ],
+    "formations": [
+      {
+        "title": "Apprenti Développeur Fullstack & DevOps",
+        "date": "Juin 2025 - PRÉSENT",
+        "details": "Stage et Alternance (**Actuel**).",
+        "school": "Conseil départemental de la Haute-Savoie"
+      },
+      {
+        "title": "BUT Informatique - en alternance",
+        "date": "2024 - PRÉSENT",
+        "details": "En cours – 3ème année",
+        "school": "Université Savoie Mont Blanc / Tétras – Annecy-le-Vieux, France"
+      },
+      {
+        "title": "Baccalauréat Général",
+        "date": "2021 - 2024",
+        "details": "Obtenu avec **Mention** (spécialités Mathématiques et Physique-Chimie)",
+        "school": "Lycée Roger Frison Roche – Chamonix Mont-Blanc, France"
+      }
+    ]
+  }
+}

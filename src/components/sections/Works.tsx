@@ -3,15 +3,18 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectCard } from "@/components/ui/ProjectCard";
-import { projects } from "@/lib/data";
+import { usePortfolioData } from "@/lib/data";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 
 export function Works() {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const t = useTranslations("Sections");
+  const { projects } = usePortfolioData();
+  const [activeFilter, setActiveFilter] = useState(t("all"));
 
-  const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
+  const categories = [t("all"), ...Array.from(new Set(projects.map((p) => p.category)))];
 
-  const filteredProjects = activeFilter === "All" 
+  const filteredProjects = activeFilter === t("all") 
     ? projects 
     : projects.filter((p) => p.category === activeFilter);
 
@@ -19,7 +22,7 @@ export function Works() {
     <section id="works" className="py-24 px-4 md:px-8 max-w-7xl mx-auto min-h-screen">
       <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <h2 className="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tighter shrink-0">
-          Featured Projects.
+          {t("works")}
         </h2>
 
         {/* Filter Menu */}

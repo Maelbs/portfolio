@@ -1,0 +1,183 @@
+{
+  "Hero": {
+    "subtitle": "Maël Bouvier Sobrino",
+    "description": "Soy un estudiante de informática versátil, enfocado en el desarrollo de software y web, que busca construir proyectos innovadores.",
+    "buttonWorks": "Descubrir mis proyectos",
+    "buttonCV": "Descargar CV"
+  },
+  "Navigation": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "works": "Proyectos",
+    "contact": "Contacto"
+  },
+  "Footer": {
+    "stack": "Next.js • Tailwind CSS • Framer Motion"
+  },
+  "Contact": {
+    "idea": "¿Tienes una idea?",
+    "title": "Trabajemos juntos",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje Enviado!",
+    "successDesc": "¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.",
+    "sendAnother": "Enviar otro",
+    "error": "Ocurrió un error."
+  },
+  "Sections": {
+    "about": "Sobre Mí",
+    "aboutDesc": "Apasionado por la tecnología, el desarrollo y el diseño.",
+    "experience": "Experiencia y Educación",
+    "experienceDesc": "Mi trayectoria académica y profesional.",
+    "works": "Mis Proyectos",
+    "worksDesc": "Una selección de mis trabajos recientes.",
+    "all": "Todos",
+    "viewProject": "Ver Proyecto",
+    "profileTitle": "Perfil",
+    "profileDesc": "Actualmente en mi tercer año de la carrera de Informática (BUT) en el IUT de Annecy, soy un desarrollador versátil de Software, Full-Stack y DevOps. Construyo aplicaciones robustas y experiencias web interactivas que combinan diseño intuitivo con rendimiento técnico. Desde la arquitectura de bases de datos hasta el despliegue, me encanta resolver problemas complejos y llevar proyectos desde la concepción hasta la producción.",
+    "downloadCV": "Descargar CV (PDF)",
+    "hardSkills": "Habilidades Técnicas",
+    "softSkills": "Habilidades Blandas",
+    "languages": "Idiomas",
+    "interests": "Intereses y Pasatiempos",
+    "dev": "Desarrollo",
+    "sys": "Sistemas y DevOps",
+    "db": "Bases de Datos"
+  },
+  "Data": {
+    "projects": [
+      {
+        "title": "Proyecto de sitio web CUBE",
+        "status": "Terminado",
+        "date": "Oct. 2025 - Mar 2026",
+        "category": "Desarrollo Web",
+        "description": "Proyecto universitario en equipo: Diseño, desarrollo y arquitectura de base de datos SQL con cumplimiento del RGPD.",
+        "details": [
+          "Diseño UML: Creación de diagramas de casos de uso, diagrama de clases y diagrama BPMN.",
+          "Diseño de Base de Datos (Merise): Desarrollo del Modelo Conceptual de Datos (MCD) y Modelo Lógico de Datos (MLD).",
+          "Implementación SQL: Estructura de base de datos, sentencias INSERT, reglas de integridad con CHECK y TRIGGERS."
+        ],
+        "techStack": [
+          "PHP/Laravel",
+          "UML",
+          "Merise",
+          "PostgreSQL",
+          "Desarrollo web",
+          "Criptografía"
+        ]
+      },
+      {
+        "title": "Proyecto de realización de videojuego",
+        "status": "Terminado",
+        "date": "Dic 2024",
+        "category": "Software",
+        "description": "Proyecto universitario en equipo: Desarrollo de un videojuego en C# centrado en 'Pancakes'.",
+        "details": [
+          "Diseño de modelo: Diseño inicial UML, modelado de clases de personajes y planificación algorítmica.",
+          "Desarrollo y Diseño: Desarrollo en C# con interfaz gráfica, manejo de eventos y sprites personalizados."
+        ],
+        "techStack": [
+          "C#",
+          ".NET",
+          "Arquitectura de Software",
+          "UML",
+          "Game Design"
+        ]
+      },
+      {
+        "title": "Proyecto de creación de base de datos",
+        "status": "Terminado",
+        "date": "Dec - Jan 2024",
+        "category": "Bases de Datos",
+        "description": "Proyecto universitario en equipo: A partir de datos reales no formateados que representan un laboratorio de investigación, nuestra tarea fue conceptualizar y desarrollar una base de datos PostgreSQL completa.",
+        "details": [
+          "Modelado conceptual y creación: Diseño de la estructura con el MCD y el MLD, seguido de la generación del script SQL.",
+          "Manipulación e inserción de datos: Carga de archivos (SQL, Excel/CSV) y poblamiento de grandes tablas mediante combinaciones cruzadas.",
+          "Consultas SQL: Escritura y ejecución de consultas SQL complejas para necesidades analíticas específicas.",
+          "Pruebas estadísticas: Análisis estadístico a través de una vista SQL exportada a Excel (media, mediana, cuartiles).",
+          "DataViz con PowerBI: Creación de informes dinámicos de visualización de datos presentados a profesionales."
+        ],
+        "techStack": [
+          "Merise",
+          "PostgreSQL",
+          "Excel",
+          "PowerBi"
+        ]
+      },
+      {
+        "title": "Proyecto de portafolio web",
+        "status": "Terminado",
+        "date": "Oct - Nov 2025",
+        "category": "Desarrollo Web",
+        "description": "Este proyecto es un portafolio personal construido con HTML, CSS, JavaScript y PHP. Su objetivo es mostrar mis habilidades y proyectos con una interfaz limpia.",
+        "details": [],
+        "techStack": [
+          "Web design / development",
+          "PHP/Laravel"
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "name": "Fuertes habilidades de resolución de problemas",
+        "description": "Acostumbrado a analizar situaciones complejas y proponer soluciones efectivas."
+      },
+      {
+        "name": "Fuerte pasión por el aprendizaje",
+        "description": "Curioso y motivado para explorar nuevas herramientas y tecnologías."
+      },
+      {
+        "name": "Excelente comunicación",
+        "description": "La comunicación es esencial. Creo en la transparencia y el intercambio constructivo."
+      }
+    ],
+    "languages": [
+      {
+        "name": "Francés",
+        "level": "Lengua materna"
+      },
+      {
+        "name": "Inglés",
+        "level": "Intermedio / Avanzado"
+      },
+      {
+        "name": "Español",
+        "level": "Intermedio"
+      }
+    ],
+    "misc": [
+      {
+        "text": "Me encanta el ciclismo de montaña, especialmente subir senderos."
+      },
+      {
+        "text": "Me gusta aprender idiomas, especialmente el lenguaje de señas y el japonés."
+      },
+      {
+        "text": "Me gusta aprender instrumentos musicales como la guitarra y el piano."
+      }
+    ],
+    "formations": [
+      {
+        "title": "Aprendiz Desarrollador Fullstack & DevOps",
+        "date": "Jun 2025 - PRESENTE",
+        "details": "Programa de prácticas y estudio (**Actual**).",
+        "school": "Conseil départemental de la Haute-Savoie"
+      },
+      {
+        "title": "BUT Informática",
+        "date": "2024 - PRESENTE",
+        "details": "En curso – 3er año",
+        "school": "Universidad de Saboya / Tetras – Annecy-le-Vieux, Francia"
+      },
+      {
+        "title": "Bachillerato General Francés",
+        "date": "2021 - 2024",
+        "details": "Graduado con **Honores** (especializado en matemáticas y física-química)",
+        "school": "Liceo Roger Frison Roche – Chamonix Mont-Blanc, Francia"
+      }
+    ]
+  }
+}

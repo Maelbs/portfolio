@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { useTranslations } from "next-intl";
 
 interface ProjectDetail {
   image: string;
@@ -29,6 +30,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index, className }: ProjectCardProps) {
+  const t = useTranslations("Sections");
   return (
     <motion.div
       className={cn(
@@ -41,6 +43,8 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
           src={project.mainPicture}
           alt={project.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={index === 0}
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute top-4 right-4 px-3 py-1 bg-background/80 backdrop-blur-md text-foreground text-[10px] font-bold uppercase tracking-widest rounded-sm border border-foreground/20">
@@ -75,7 +79,7 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
           rel="noopener noreferrer"
           className="w-full mt-auto"
         >
-          View Project
+          {t("viewProject")}
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M7 17l9.2-9.2M17 17V7H7" />
           </svg>

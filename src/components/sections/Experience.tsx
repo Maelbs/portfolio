@@ -1,14 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { formationsData } from "@/lib/data";
+import { usePortfolioData } from "@/lib/data";
+import { useTranslations } from "next-intl";
 
 export function Experience() {
+  const t = useTranslations("Sections");
+  const { formationsData } = usePortfolioData();
   return (
     <section id="experience" className="py-24 px-4 md:px-8 max-w-7xl mx-auto">
       <div className="mb-20">
         <h2 className="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">
-          My Academic Path.
+          {t("experience")}
         </h2>
         <div className="w-full h-px bg-foreground/20" />
       </div>

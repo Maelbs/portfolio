@@ -1,0 +1,183 @@
+{
+  "Hero": {
+    "subtitle": "Maël Bouvier Sobrino",
+    "description": "I am a versatile computer science student focusing on software and web development, seeking to build innovative projects.",
+    "buttonWorks": "Discover my works",
+    "buttonCV": "Download CV"
+  },
+  "Navigation": {
+    "about": "About",
+    "experience": "Experience",
+    "works": "Works",
+    "contact": "Contact"
+  },
+  "Footer": {
+    "stack": "Next.js • Tailwind CSS • Framer Motion"
+  },
+  "Contact": {
+    "idea": "Have an idea?",
+    "title": "Let's work together",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message Sent!",
+    "successDesc": "Message sent successfully! I will get back to you soon.",
+    "sendAnother": "Send another",
+    "error": "An error occurred."
+  },
+  "Sections": {
+    "about": "About Me",
+    "aboutDesc": "Passionate about technology, development, and design.",
+    "experience": "Experience & Education",
+    "experienceDesc": "My academic and professional journey.",
+    "works": "My Projects",
+    "worksDesc": "A selection of my recent works.",
+    "all": "All",
+    "viewProject": "View Project",
+    "profileTitle": "Profile",
+    "profileDesc": "Currently in my 3rd year of a Computer Science degree (BUT) at IUT Annecy, I am a versatile Software, Full-Stack, and DevOps developer. I build robust applications and interactive web experiences that blend intuitive design with peak technical performance. From architecting efficient databases to orchestrating seamless deployments, I thrive on solving complex problems and driving projects from concept to production.",
+    "downloadCV": "Download CV (PDF)",
+    "hardSkills": "Hard Skills",
+    "softSkills": "Soft Skills",
+    "languages": "Languages",
+    "interests": "Interests & Hobbies",
+    "dev": "Development",
+    "sys": "Systems & DevOps",
+    "db": "Databases"
+  },
+  "Data": {
+    "projects": [
+      {
+        "title": "CUBE website project",
+        "status": "Finished",
+        "date": "Oct. 2025 - March 2026",
+        "category": "Web Dev",
+        "description": "University team project: Complete Website Conception, Development, and SQL Database Architecture with integrated GDPR Compliance.",
+        "details": [
+          "UML Conception: The UML Conception phase began by creating a Use Case Diagram to model the website's functional requirements, followed by a Class Diagram, and finally a BPMN Diagram.",
+          "Database Conception (Merise): We developed the Conceptual Data Model (MCD) visually, followed by the derivation of the Relational Logical Data Model (MLD).",
+          "SQL Implementation: Translating the model into the database structure, writing INSERT statements, and integrating advanced integrity rules via CHECK constraints and TRIGGERS."
+        ],
+        "techStack": [
+          "PHP/Laravel",
+          "UML",
+          "Merise",
+          "PostgreSQL",
+          "Web design / development",
+          "Cryptography"
+        ]
+      },
+      {
+        "title": "Game realisation project",
+        "status": "Finished",
+        "date": "Dec 2024",
+        "category": "Software",
+        "description": "University team project: Development of a C# video game focused on 'Pancakes', including gameplay mechanics, character design, and interactive elements.",
+        "details": [
+          "Model Conception: Initial UML design, character class modeling, and algorithmic planning for gameplay and interactions.",
+          "Development & Design: Complete development in C# with GUI (WinForms/WPF), event handling, and custom character sprites."
+        ],
+        "techStack": [
+          "C#",
+          ".NET",
+          "Software Architecture",
+          "UML",
+          "Game Design"
+        ]
+      },
+      {
+        "title": "Database creation project",
+        "status": "Finished",
+        "date": "Dec - Jan 2024",
+        "category": "Databases",
+        "description": "University team project: Working from real-world, unformatted data representing a research laboratory, our task was to conceptualize and develop a complete PostgreSQL database.",
+        "details": [
+          "Conceptual Modeling and Creation: Designing the database structure, MCD and MLD, followed by SQL script generation.",
+          "Data Manipulation and Insertion: Loading data from files (SQL, Excel/CSV) and populating main tables via cross-joins.",
+          "SQL Queries: Writing and executing complex SQL queries for specific analytical needs.",
+          "Statistical Tests: Statistical analysis via an exported SQL view to Excel (mean, median, quartiles).",
+          "DataViz with PowerBI: Creating dynamic data visualization reports presented to professionals."
+        ],
+        "techStack": [
+          "Merise",
+          "PostgreSQL",
+          "Excel",
+          "PowerBi"
+        ]
+      },
+      {
+        "title": "Portfolio website project",
+        "status": "Finished",
+        "date": "Oct - Nov 2025",
+        "category": "Web Dev",
+        "description": "This project is a personal portfolio built using HTML, CSS, JavaScript, and PHP. Its goal is to showcase my skills and projects with a clean interface.",
+        "details": [],
+        "techStack": [
+          "Web design / development",
+          "PHP/Laravel"
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "name": "Strong problem-solving skills",
+        "description": "Used to analyzing complex situations and proposing effective solutions tailored to the project’s needs."
+      },
+      {
+        "name": "Strong passion for continuous learning",
+        "description": "Curious and motivated to explore new tools and technologies to continuously improve my practices."
+      },
+      {
+        "name": "Excellent communication",
+        "description": "Communication is essential. I believe in transparency and constructive exchange above all."
+      }
+    ],
+    "languages": [
+      {
+        "name": "French",
+        "level": "Native speaker"
+      },
+      {
+        "name": "English",
+        "level": "Intermediate / Upper"
+      },
+      {
+        "name": "Spanish",
+        "level": "Intermediate"
+      }
+    ],
+    "misc": [
+      {
+        "text": "I love mountain biking, especially climbing trails."
+      },
+      {
+        "text": "I like learning languages, especially sign language and Japanese."
+      },
+      {
+        "text": "I like learning musical instruments such as guitar and piano."
+      }
+    ],
+    "formations": [
+      {
+        "title": "Fullstack & DevOps Developer Apprentice",
+        "date": "June 2025 - PRESENT",
+        "details": "Internship & Work-study program (**Current**).",
+        "school": "Conseil départemental de la Haute-Savoie"
+      },
+      {
+        "title": "BUT Informatique - work-study",
+        "date": "2024 - PRESENT",
+        "details": "In progress – 3rd year",
+        "school": "University of Savoy / Tetras – Annecy-le-Vieux, France"
+      },
+      {
+        "title": "French General Baccalaureate",
+        "date": "2021 - 2024",
+        "details": "Graduated with **Honors** (specialized in mathematics and physics-chemistry)",
+        "school": "Roger Frison Roche High School – Chamonix Mont-Blanc, France"
+      }
+    ]
+  }
+}

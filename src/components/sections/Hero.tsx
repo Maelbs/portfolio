@@ -3,9 +3,11 @@
 import { motion, Variants } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 
 export function Hero() {
-  const title = "Creative Software and web Developer".split(" ");
+  const t = useTranslations('Hero');
+  const title = "Creative Developer".split(" ");
   
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -42,7 +44,7 @@ export function Hero() {
             transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
           >
             <span className="w-8 h-px bg-accent"></span>
-            Maël Bouvier Sobrino
+            {t("subtitle")}
           </motion.p>
 
           <h1 className="font-heading text-5xl sm:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold leading-[0.9] tracking-tighter mb-8 flex flex-wrap gap-x-3 lg:gap-x-4">
@@ -61,7 +63,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            I am a versatile computer science student focusing on software and web development, seeking to build innovative projects.
+            {t("description")}
           </motion.p>
 
           <motion.div
@@ -72,11 +74,11 @@ export function Hero() {
           >
             <Button variant="primary" onClick={() => document.getElementById('works')?.scrollIntoView({ behavior: 'smooth'})}>
               <i className="fa-solid fa-arrow-down text-lg"></i>
-              Discover my works
+              {t("buttonWorks")}
             </Button>
             <Button variant="secondary" href="/assets/files/INTERNATIONAL-CV.pdf" target="_blank" rel="noopener noreferrer">
               <i className="fa-solid fa-file-pdf text-lg"></i>
-              Download CV
+              {t("buttonCV")}
             </Button>
           </motion.div>
         </motion.div>
@@ -96,8 +98,9 @@ export function Hero() {
           {/* Transparent Image */}
           <Image
             src="/assets/img/profile.png"
-            alt="Maël Bouvier Sobrino"
+            alt={t("subtitle")}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-contain object-bottom z-10 transition-transform duration-700 ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-6 group-hover:scale-[1.05] drop-shadow-2xl"
             priority
           />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Syne } from "next/font/google";
 import "./globals.css";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,8 +16,30 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Maël Bouvier Sobrino | Creative Developer",
-  description: "Portfolio of Maël Bouvier Sobrino, a versatile computer science student and developer based in Annecy.",
+  title: "Maël | Creative Developer",
+  description: "Portfolio de Maël, développeur front-end créatif. Projets, expériences et contact.",
+  openGraph: {
+    title: "Maël | Creative Developer",
+    description: "Portfolio de Maël, développeur front-end créatif. Projets, expériences et contact.",
+    url: "https://maelbouviersobrino.com",
+    siteName: "Maël Portfolio",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop", 
+        width: 1200,
+        height: 630,
+        alt: "Maël - Creative Developer Portfolio",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maël | Creative Developer",
+    description: "Portfolio de Maël, développeur front-end créatif.",
+    images: ["https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"],
+  },
 };
 
 export default function RootLayout({
@@ -25,8 +48,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${syne.variable} scroll-smooth`}>
-      <body className="font-sans bg-background text-foreground overflow-x-hidden antialiased">
+    <html lang="fr" className={`${inter.variable} ${syne.variable} scroll-smooth`}>
+      <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      </head>
+      <body className="font-sans bg-background text-foreground overflow-x-hidden antialiased md:cursor-none">
+        <CustomCursor />
         {children}
       </body>
     </html>

@@ -55,7 +55,7 @@ export function Contact() {
           </h2>
           
           <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-            <Button href="https://www.linkedin.com/" target="_blank" variant="secondary">
+            <Button href="https://fr.linkedin.com/in/maël-bouvier-sobrino-6aaa20364" target="_blank" variant="secondary">
               <i className="fa-brands fa-linkedin text-lg" />
               LinkedIn
             </Button>

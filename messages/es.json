@@ -106,18 +106,6 @@
           "Excel",
           "PowerBi"
         ]
-      },
-      {
-        "title": "Proyecto de portafolio web",
-        "status": "Terminado",
-        "date": "Oct - Nov 2025",
-        "category": "Desarrollo Web",
-        "description": "Este proyecto es un portafolio personal construido con HTML, CSS, JavaScript y PHP. Su objetivo es mostrar mis habilidades y proyectos con una interfaz limpia.",
-        "details": [],
-        "techStack": [
-          "Web design / development",
-          "PHP/Laravel"
-        ]
       }
     ],
     "skills": [

@@ -85,19 +85,6 @@ export function usePortfolioData() {
       ],
       techStack: t.raw('projects.2.techStack'),
       link: "/assets/files/CompteRendu_LISTIC.pdf",
-    },
-    {
-      id: "portfolio",
-      title: t('projects.3.title'),
-      status: t('projects.3.status'),
-      date: t('projects.3.date'),
-      icon: "fa-solid fa-code",
-      category: t('projects.3.category'),
-      mainPicture: "/assets/img/Projects/ProjectPortfolio/PortfolioMain.png",
-      description: t('projects.3.description'),
-      details: [],
-      techStack: t.raw('projects.3.techStack'),
-      link: "https://github.com/Maelbs/PortfolioUSMB",
     }
   ];
 

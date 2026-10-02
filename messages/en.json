@@ -52,20 +52,20 @@
       {
         "title": "CUBE website project",
         "status": "Finished",
-        "date": "Oct. 2025 - March 2026",
+        "date": "Oct 2025 - Mar 2026",
         "category": "Web Dev",
-        "description": "University team project: Complete Website Conception, Development, and SQL Database Architecture with integrated GDPR Compliance.",
+        "description": "University team project: Complete design and development of a website, SQL database architecture with GDPR compliance.",
         "details": [
-          "UML Conception: The UML Conception phase began by creating a Use Case Diagram to model the website's functional requirements, followed by a Class Diagram, and finally a BPMN Diagram.",
-          "Database Conception (Merise): We developed the Conceptual Data Model (MCD) visually, followed by the derivation of the Relational Logical Data Model (MLD).",
-          "SQL Implementation: Translating the model into the database structure, writing INSERT statements, and integrating advanced integrity rules via CHECK constraints and TRIGGERS."
+          "UML Conception: The design phase began with creating a use case diagram to model requirements, followed by a class diagram for static structure, and a BPMN diagram to map business processes.",
+          "Database Conception (Merise): Development of the Conceptual Data Model (MCD) followed by derivation into the Logical Data Model (MLD).",
+          "SQL Implementation: Translating the model into database structure, writing insertion queries, and integrating advanced integrity rules via CHECK constraints and TRIGGERS."
         ],
         "techStack": [
           "PHP/Laravel",
           "UML",
           "Merise",
           "PostgreSQL",
-          "Web design / development",
+          "Web development",
           "Cryptography"
         ]
       },
@@ -105,18 +105,6 @@
           "PostgreSQL",
           "Excel",
           "PowerBi"
-        ]
-      },
-      {
-        "title": "Portfolio website project",
-        "status": "Finished",
-        "date": "Oct - Nov 2025",
-        "category": "Web Dev",
-        "description": "This project is a personal portfolio built using HTML, CSS, JavaScript, and PHP. Its goal is to showcase my skills and projects with a clean interface.",
-        "details": [],
-        "techStack": [
-          "Web design / development",
-          "PHP/Laravel"
         ]
       }
     ],

@@ -10,6 +10,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: 'Veuillez remplir tous les champs.' }, { status: 400 });
     }
 
+    console.log("USER:", process.env.EMAIL_USER);
+    console.log("PASS existe ?:", !!process.env.EMAIL_PASS);
     const transporter = nodemailer.createTransport({
       host: 'smtp.office365.com', 
       port: 587,

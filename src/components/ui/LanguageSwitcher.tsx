@@ -11,6 +11,7 @@ export function LanguageSwitcher() {
   const changeLanguage = (locale: "fr" | "en" | "es") => {
     if (currentLocale === locale) return;
     startTransition(() => {
+      // @ts-expect-error
       router.replace(
         { pathname, params },
         { locale }

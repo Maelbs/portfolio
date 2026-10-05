@@ -18,11 +18,11 @@ const syne = Syne({
   display: "swap",
 });
 export const metadata: Metadata = {
-  title: "Maël | Versatile Developer",
-  description: "Portfolio de Maël, développeur fullstack / DevOps créatif et polyvalent. Projets, expériences et contact.",
+  title: "Maël Bouvier Sobrino | Versatile Developer",
+  description: "Portfolio de Maël Bouvier Sobrino, développeur fullstack / DevOps créatif et polyvalent. Projets, expériences et contact.",
   openGraph: {
-    title: "Maël | Versatile Developer",
-    description: "Portfolio de Maël, développeur fullstack / DevOps créatif et polyvalent. Projets, expériences et contact.",
+    title: "Maël Bouvier Sobrino | Versatile Developer",
+    description: "Portfolio de Maël Bouvier Sobrino, développeur fullstack / DevOps créatif et polyvalent. Projets, expériences et contact.",
     url: "https://maelbouviersobrino.com",
     siteName: "Maël Portfolio",
     images: [
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maël | Versatile Developer",
-    description: "Portfolio de Maël, développeur fullstack / DevOps créatif et polyvalent.",
+    title: "Maël Bouvier Sobrino | Versatile Developer",
+    description: "Portfolio de Maël Bouvier Sobrino, développeur fullstack / DevOps créatif et polyvalent.",
     images: ["https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"],
   },
 };

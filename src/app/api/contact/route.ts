@@ -14,13 +14,16 @@ export async function POST(request: Request) {
     // Pour que cela fonctionne sur Vercel, vous devez ajouter EMAIL_USER et EMAIL_PASS 
     // dans les variables d'environnement (Settings > Environment Variables) sur Vercel.
     const transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com', // Serveur SMTP de Hotmail/Outlook (à changer si Gmail etc.)
+      host: 'smtp-mail.outlook.com', // Serveur spécifique pour les comptes personnels (Hotmail/Outlook)
       port: 587,
       secure: false, // false pour le port 587
       auth: {
         user: process.env.EMAIL_USER, 
         pass: process.env.EMAIL_PASS,
       },
+      tls: {
+        ciphers: 'SSLv3'
+      }
     });
 
     const mailOptions = {

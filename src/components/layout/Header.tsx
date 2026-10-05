@@ -1,12 +1,10 @@
 "use client";
-
 import { useTheme } from "@/components/ThemeProvider";
 import { useEffect, useState } from "react";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { useTranslations } from "next-intl";
-
 export function Header() {
   const t = useTranslations("Navigation");
   const { theme, toggleTheme } = useTheme();
@@ -14,13 +12,11 @@ export function Header() {
   const [activeSection, setActiveSection] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
-
   useEffect(() => {
     return scrollY.on("change", (latest) => {
       setIsScrolled(latest > 50);
     });
   }, [scrollY]);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -32,19 +28,16 @@ export function Header() {
       },
       { rootMargin: "-20% 0px -70% 0px" }
     );
-
     const sections = document.querySelectorAll("section[id], footer[id]");
     sections.forEach((sec) => observer.observe(sec));
     return () => observer.disconnect();
   }, []);
-
   const navLinks = [
     { name: t("about"), href: "#about" },
     { name: t("experience"), href: "#experience" },
     { name: t("works"), href: "#works" },
     { name: t("contact"), href: "#contact" },
   ];
-
   return (
     <motion.header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -55,7 +48,6 @@ export function Header() {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
-        
         <Button href="#" variant="secondary" className="scale-90 origin-left hidden sm:inline-block">
           <span className="font-heading font-bold text-lg tracking-tighter uppercase flex items-center">
             Maël
@@ -80,7 +72,6 @@ export function Header() {
             </motion.span>
           </span>
         </Button>
-
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
@@ -93,8 +84,6 @@ export function Header() {
                 }`}
               >
                 {link.name}
-                
-                {/* Active Indicator (Framer Motion sliding underline) */}
                 {isActive && (
                   <motion.div
                     layoutId="activeNav"
@@ -103,8 +92,6 @@ export function Header() {
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
-
-                {/* Hover Indicator (Scale X from center on hover if not active) */}
                 {!isActive && (
                   <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-foreground/30 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
                 )}
@@ -112,7 +99,6 @@ export function Header() {
             );
           })}
         </nav>
-
         <div className="flex items-center gap-3 sm:gap-6">
           <LanguageSwitcher />
           <button 
@@ -138,8 +124,6 @@ export function Header() {
               </svg>
             )}
           </button>
-          
-          {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden w-9 h-9 rounded-full bg-foreground/5 flex flex-col items-center justify-center gap-[4px] shrink-0"
@@ -151,8 +135,6 @@ export function Header() {
           </button>
         </div>
       </div>
-
-      {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.nav

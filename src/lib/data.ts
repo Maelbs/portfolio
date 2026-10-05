@@ -1,8 +1,6 @@
 import { useTranslations } from 'next-intl';
-
 export function usePortfolioData() {
   const t = useTranslations('Data');
-
   const projects = [
     {
       id: "cube",
@@ -87,7 +85,6 @@ export function usePortfolioData() {
       link: "/assets/files/CompteRendu_LISTIC.pdf",
     }
   ];
-
   const softSkillsData = [
     {
       metric: "10x",
@@ -103,7 +100,6 @@ export function usePortfolioData() {
       description: t('skills.2.description'),
     },
   ];
-
   const languagesData = [
     {
       name: t('languages.0.name'),
@@ -121,7 +117,6 @@ export function usePortfolioData() {
       percent: 50
     }
   ];
-
   const miscData = [
     {
       text: t('misc.0.text'),
@@ -136,7 +131,6 @@ export function usePortfolioData() {
       icon: "fa-solid fa-music"
     }
   ];
-
   const formationsData = [
     {
       title: t('formations.0.title'),
@@ -160,7 +154,6 @@ export function usePortfolioData() {
       iconClass: "fas fa-graduation-cap"
     }
   ];
-
   return {
     projects,
     softSkillsData,
@@ -169,7 +162,6 @@ export function usePortfolioData() {
     formationsData
   };
 }
-
 export const technologies = [
   { name: "Java", category: "developpement" },
   { name: "C / C++", category: "developpement" },

@@ -1,9 +1,7 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { usePortfolioData } from "@/lib/data";
 import { useTranslations } from "next-intl";
-
 export function Experience() {
   const t = useTranslations("Sections");
   const { formationsData } = usePortfolioData();
@@ -15,7 +13,6 @@ export function Experience() {
         </h2>
         <div className="w-full h-px bg-foreground/20" />
       </div>
-
       <div className="relative border-l-2 border-foreground/10 ml-4 md:ml-8 flex flex-col gap-12">
         {formationsData.map((formation, index) => (
           <motion.div
@@ -26,12 +23,9 @@ export function Experience() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: index * 0.15, type: "spring", stiffness: 80, damping: 20 }}
           >
-            {/* Timeline Dot */}
             <div className="absolute left-[-1.3rem] top-6 w-10 h-10 rounded-full bg-background border-2 border-foreground/20 flex items-center justify-center group-hover:border-accent group-hover:bg-accent group-hover:text-white transition-colors duration-500 shadow-xl z-10 text-foreground/50">
               <i className={`${formation.iconClass} text-sm`} />
             </div>
-
-            {/* Content Card */}
             <div className="border border-foreground/10 bg-foreground/[0.04] shadow-xl shadow-black/10 dark:shadow-black/40 backdrop-blur-md rounded-2xl p-6 md:p-8 flex flex-col hoverable transition-all duration-500 group-hover:border-foreground/30 group-hover:shadow-2xl">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5">
                 <h3 className="font-heading text-xl md:text-2xl uppercase font-bold tracking-tight text-foreground group-hover:text-accent transition-colors duration-300">
@@ -41,14 +35,12 @@ export function Experience() {
                   {formation.date}
                 </span>
               </div>
-              
               <div className="flex items-center gap-4 text-foreground/80 font-medium tracking-wide uppercase text-xs md:text-sm mb-6 pb-6 border-b border-foreground/5">
                 <div className="w-10 h-10 rounded-xl bg-foreground/5 flex items-center justify-center shrink-0 border border-foreground/10">
                   <i className="fas fa-building text-foreground/50 text-sm" />
                 </div>
                 {formation.school}
               </div>
-              
               <div className="text-foreground/70 font-light leading-relaxed bg-foreground/[0.02] p-5 rounded-xl border border-foreground/5"
                  dangerouslySetInnerHTML={{ __html: formation.details.replace(/\*\*(.*?)\*\*/g, '<span class="font-bold text-foreground">$1</span>') }} 
               />

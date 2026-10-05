@@ -1,34 +1,27 @@
 "use client";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
-
 export function Contact() {
   const t = useTranslations("Contact");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
-
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("loading");
-    
     const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
       message: formData.get("message")
     };
-
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      
       const result = await response.json();
-      
       if (result.success) {
         setStatus("success");
         setMessage(t("successDesc"));
@@ -41,11 +34,9 @@ export function Contact() {
       setMessage(t("error"));
     }
   }
-
   return (
     <section id="contact" className="py-24 md:py-32 px-4 md:px-8 max-w-7xl mx-auto min-h-[70vh] flex items-center">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center w-full">
-        {/* Left Column: Text & Socials */}
         <div className="flex flex-col">
           <p className="text-sm uppercase tracking-[0.3em] text-foreground/50 mb-6 font-medium">
             {t("idea")}
@@ -53,7 +44,6 @@ export function Contact() {
           <h2 className="font-heading text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-bold uppercase tracking-tighter leading-[1.1] text-foreground mb-12 break-words">
             {t("title")}
           </h2>
-          
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <Button href="https://fr.linkedin.com/in/maël-bouvier-sobrino-6aaa20364" target="_blank" variant="secondary">
               <i className="fa-brands fa-linkedin text-lg" />
@@ -69,14 +59,9 @@ export function Contact() {
             </Button>
           </div>
         </div>
-
-        {/* Right Column: Form */}
-        {/* Right Column: Form */}
         <div className="relative w-full p-8 md:p-12 rounded-[2.5rem] bg-foreground/[0.02] border border-foreground/10 shadow-2xl shadow-black/5 backdrop-blur-xl overflow-hidden group hover:border-accent/30 transition-colors duration-500">
-          {/* Decorative glows */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[100px] pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-700 mix-blend-screen"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-[100px] pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-700 mix-blend-screen"></div>
-          
           <div className="relative z-10">
             {status === "success" ? (
               <div className="text-center py-16">
@@ -144,11 +129,9 @@ export function Contact() {
                     ></textarea>
                   </div>
                 </div>
-                
                 {status === "error" && (
                   <p className="text-red-500 text-sm font-medium pl-1">{message}</p>
                 )}
-
                 <div className="mt-4 flex justify-end">
                   <Button type="submit" variant="primary" disabled={status === "loading"} className="w-full sm:w-auto min-w-[160px]">
                     {status === "loading" ? (

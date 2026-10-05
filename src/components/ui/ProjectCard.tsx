@@ -1,16 +1,13 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
-
 interface ProjectDetail {
   image: string;
   description: string;
 }
-
 interface Project {
   id: string;
   title: string;
@@ -22,13 +19,11 @@ interface Project {
   link: string;
   details: ProjectDetail[];
 }
-
 interface ProjectCardProps {
   project: Project;
   index: number;
   className?: string;
 }
-
 export function ProjectCard({ project, index, className }: ProjectCardProps) {
   const t = useTranslations("Sections");
   return (
@@ -51,16 +46,13 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
           {project.status}
         </div>
       </div>
-      
       <div className="flex flex-col p-6 flex-1">
         <h3 className="font-heading text-2xl font-bold uppercase tracking-tight mb-3 group-hover:text-accent transition-colors">
           {project.title}
         </h3>
-        
         <p className="text-foreground/70 text-sm font-light leading-relaxed mb-6 flex-1">
           {project.description}
         </p>
-
         <div className="flex flex-wrap gap-2 mb-8">
           {project.techStack.map((tech) => (
             <span
@@ -71,7 +63,6 @@ export function ProjectCard({ project, index, className }: ProjectCardProps) {
             </span>
           ))}
         </div>
-
         <Button
           variant="secondary"
           href={project.link}

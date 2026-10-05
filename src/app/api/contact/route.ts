@@ -1,15 +1,12 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-
 export async function POST(request: Request) {
   try {
     const data = await request.json();
     const { name, email, message } = data;
-
     if (!name || !email || !message) {
       return NextResponse.json({ success: false, error: 'Veuillez remplir tous les champs.' }, { status: 400 });
     }
-
     console.log("USER:", process.env.EMAIL_USER);
     console.log("PASS existe ?:", !!process.env.EMAIL_PASS);
     const transporter = nodemailer.createTransport({
@@ -21,7 +18,6 @@ export async function POST(request: Request) {
         pass: process.env.EMAIL_PASS,
       }
     });
-
     const mailOptions = {
       from: process.env.EMAIL_USER,
       replyTo: email,
@@ -29,9 +25,7 @@ export async function POST(request: Request) {
       subject: `Nouveau contact depuis le Portfolio - ${name}`,
       text: `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     };
-
     await transporter.sendMail(mailOptions);
-
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Erreur SMTP:', error);
@@ -41,4 +35,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

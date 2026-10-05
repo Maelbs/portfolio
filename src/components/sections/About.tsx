@@ -1,17 +1,14 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { usePortfolioData, technologies } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
-
 export function About() {
   const t = useTranslations("Sections");
   const { miscData, languagesData, softSkillsData } = usePortfolioData();
   const devTech = technologies.filter(t => t.category === "developpement");
   const sysTech = technologies.filter(t => t.category === "systeme");
   const dbTech = technologies.filter(t => t.category === "bdd");
-
   return (
     <section id="about" className="py-24 px-4 md:px-8 max-w-7xl mx-auto">
       <div className="mb-12">
@@ -19,10 +16,7 @@ export function About() {
           {t("about")}.
         </h2>
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        
-        {/* Card 1: Bio */}
         <motion.div 
           className="md:col-span-12 lg:col-span-5 border border-foreground/10 bg-foreground/[0.03] shadow-xl shadow-black/5 dark:shadow-black/20 backdrop-blur-sm rounded-xl p-8 flex flex-col justify-between"
           initial={{ opacity: 0, y: 20 }}
@@ -49,8 +43,6 @@ export function About() {
             </svg>
           </Button>
         </motion.div>
-
-        {/* Card 2: Technical Skills */}
         <motion.div 
           className="md:col-span-12 lg:col-span-7 border border-foreground/10 bg-foreground/[0.04] shadow-xl shadow-black/10 dark:shadow-black/40 backdrop-blur-md rounded-xl p-8"
           initial={{ opacity: 0, y: 20 }}
@@ -66,7 +58,6 @@ export function About() {
               {t("hardSkills")}
             </h3>
           </div>
-
           <div className="flex flex-col gap-6">
             <div>
               <h4 className="text-[10px] uppercase text-foreground/50 font-bold mb-3 tracking-widest">{t("dev")}</h4>
@@ -100,8 +91,6 @@ export function About() {
             </div>
           </div>
         </motion.div>
-
-        {/* Card 3: {t("softSkills")} */}
         <motion.div 
           className="md:col-span-12 border border-foreground/10 bg-foreground/[0.04] shadow-xl shadow-black/10 dark:shadow-black/40 backdrop-blur-md rounded-xl p-8"
           initial={{ opacity: 0, y: 20 }}
@@ -117,7 +106,6 @@ export function About() {
               {t("softSkills")}
             </h3>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {softSkillsData.map((benefit, idx) => (
               <div key={idx} className="flex flex-col gap-3">
@@ -136,8 +124,6 @@ export function About() {
             ))}
           </div>
         </motion.div>
-
-        {/* Card 4: {t("languages")} */}
         <motion.div 
           className="md:col-span-12 lg:col-span-5 border border-foreground/10 bg-foreground/[0.04] shadow-xl shadow-black/10 dark:shadow-black/40 backdrop-blur-md rounded-xl p-8"
           initial={{ opacity: 0, y: 20 }}
@@ -153,7 +139,6 @@ export function About() {
               {t("languages")}
             </h3>
           </div>
-
           <div className="flex flex-col gap-8">
             {languagesData.map((lang, idx) => (
               <div key={idx} className="flex flex-col gap-3">
@@ -171,8 +156,6 @@ export function About() {
             ))}
           </div>
         </motion.div>
-
-        {/* Card 5: Interests */}
         <motion.div 
           className="md:col-span-12 lg:col-span-7 border border-foreground/10 bg-foreground/[0.04] shadow-xl shadow-black/10 dark:shadow-black/40 backdrop-blur-md rounded-xl p-8"
           initial={{ opacity: 0, y: 20 }}
@@ -188,7 +171,6 @@ export function About() {
               {t("interests")}
             </h3>
           </div>
-
           <div className="flex flex-col gap-4">
             {miscData.map((misc, idx) => (
               <div key={idx} className="flex gap-6 items-center p-4 border border-foreground/5 bg-foreground/[0.015] rounded-sm">
@@ -202,7 +184,6 @@ export function About() {
             ))}
           </div>
         </motion.div>
-
       </div>
     </section>
   );

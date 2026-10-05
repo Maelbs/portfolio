@@ -43,7 +43,7 @@ export function Button({
   );
 
   const containerClasses = cn(
-    "group/btn hoverable relative border-none bg-transparent p-0 cursor-pointer outline-offset-4 select-none touch-manipulation transition-[filter] duration-[250ms] hover:brightness-110 inline-block w-full md:w-auto disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:brightness-100",
+    "group/btn hoverable relative border-none bg-transparent p-0 cursor-pointer outline-offset-4 select-none touch-manipulation transition-[filter] duration-[250ms] hover:brightness-110 inline-block disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:brightness-100",
     className
   );
 

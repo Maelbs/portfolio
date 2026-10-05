@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 
 export function Hero() {
   const t = useTranslations('Hero');
-  const title = "Creative Developer".split(" ");
+  const title = "versatile Developer".split(" ");
   
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -85,15 +85,74 @@ export function Hero() {
 
         {/* Right Column: Photo */}
         <motion.div 
-          className="lg:col-span-5 relative w-full h-[350px] sm:h-[400px] lg:h-[500px] flex items-end justify-center group mt-8 lg:mt-0 max-w-sm lg:max-w-md mx-auto"
+          className="group lg:col-span-5 relative w-full h-[350px] sm:h-[400px] lg:h-[500px] flex items-end justify-center mt-8 lg:mt-0 max-w-sm lg:max-w-md mx-auto"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
         >
+          {/* React Logo */}
+          <motion.div
+            className="pointer-events-none absolute left-8 bottom-24 z-[6] flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-background/90 shadow-2xl shadow-black/20 backdrop-blur-md opacity-0 translate-y-8 -translate-x-8 scale-75 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:z-[20] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:scale-100"
+            style={{ originX: 0.5, originY: 0.5 }}
+          >
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5"
+            >
+              <Image
+                src="/assets/img/React-icon.svg.webp"
+                alt="React"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* C# Logo */}
+          <motion.div
+            className="pointer-events-none absolute left-1/2 bottom-24 z-[6] flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full border border-white/15 bg-background/90 shadow-2xl shadow-black/20 backdrop-blur-md opacity-0 translate-y-8 scale-75 transition-all duration-700 delay-100 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:z-[20] group-hover:opacity-100 group-hover:translate-y-[-16px] group-hover:scale-100"
+            style={{ originX: 0.5, originY: 0.5 }}
+          >
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0.5 }}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5"
+            >
+              <Image
+                src="/assets/img/Logo_C_sharp.svg.webp"
+                alt="C#"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* Docker Logo */}
+          <motion.div
+            className="pointer-events-none absolute right-8 bottom-24 z-[6] flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-background/90 shadow-2xl shadow-black/20 backdrop-blur-md opacity-0 translate-y-8 translate-x-8 scale-75 transition-all duration-700 delay-75 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:z-[20] group-hover:opacity-100 group-hover:translate-y-[-4px] group-hover:translate-x-0 group-hover:scale-100"
+            style={{ originX: 0.5, originY: 0.5 }}
+          >
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 1 }}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5"
+            >
+              <Image
+                src="/assets/img/docker_icon_146192.png.webp"
+                alt="Docker"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+            </motion.div>
+          </motion.div>
+
           {/* Animated Frame Behind Image */}
-          <div className="absolute top-10 bottom-0 left-6 right-6 md:left-12 md:right-12 rounded-[2rem] bg-accent/10 border-2 border-accent/30 transition-all duration-700 ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:rotate-3 group-hover:scale-[1.03] group-hover:bg-accent/20 group-hover:border-accent/50 z-0 shadow-2xl shadow-accent/5"></div>
+          <div className="absolute top-10 bottom-0 left-6 right-6 md:left-12 md:right-12 rounded-[2rem] bg-accent/10 border-2 border-accent/30 z-[1] shadow-2xl shadow-accent/5 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02] group-hover:rotate-2 group-hover:bg-accent/20 group-hover:border-accent/50"></div>
           
-          <div className="absolute top-16 bottom-6 left-10 right-10 md:left-20 md:right-20 rounded-full bg-accent/20 blur-3xl transition-opacity duration-700 opacity-50 group-hover:opacity-100 z-0"></div>
+          <div className="absolute top-16 bottom-6 left-10 right-10 md:left-20 md:right-20 rounded-full bg-accent/20 blur-3xl opacity-50 z-[1] transition-opacity duration-700 group-hover:opacity-90"></div>
 
           {/* Transparent Image */}
           <Image
@@ -101,7 +160,7 @@ export function Hero() {
             alt={t("subtitle")}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-contain object-bottom z-10 transition-transform duration-700 ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-6 group-hover:scale-[1.05] drop-shadow-2xl"
+            className="object-contain object-bottom z-10 drop-shadow-2xl transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-4 group-hover:scale-[1.03]"
             priority
           />
         </motion.div>

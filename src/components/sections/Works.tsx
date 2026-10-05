@@ -26,13 +26,13 @@ export function Works() {
         </h2>
 
         {/* Filter Menu */}
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex overflow-x-auto pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:pb-0 md:flex-wrap items-center gap-3 sm:gap-4 no-scrollbar">
           {categories.map((category) => (
             <Button
               key={category}
               onClick={() => setActiveFilter(category)}
               variant={activeFilter === category ? "primary" : "secondary"}
-              className="scale-[0.85] origin-left sm:scale-90 md:scale-100"
+              className="w-auto whitespace-nowrap scale-90 sm:scale-100 origin-left shrink-0"
             >
               {category}
             </Button>

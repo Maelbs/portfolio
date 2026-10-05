@@ -2,7 +2,7 @@
 
 import { useTheme } from "@/components/ThemeProvider";
 import { useEffect, useState } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { useTranslations } from "next-intl";
@@ -12,6 +12,7 @@ export function Header() {
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export function Header() {
   return (
     <motion.header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-md py-4 border-b border-foreground/10" : "bg-transparent py-6"
+        isScrolled || isMobileMenuOpen ? "bg-background/90 backdrop-blur-md py-4 border-b border-foreground/10 shadow-sm" : "bg-transparent py-6"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -112,11 +113,11 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 sm:gap-6">
           <LanguageSwitcher />
           <button 
             onClick={toggleTheme}
-            className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-foreground/10 flex items-center justify-center transition-colors hoverable"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-foreground/5 hover:bg-foreground/10 flex items-center justify-center transition-colors hoverable shrink-0"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
@@ -137,8 +138,49 @@ export function Header() {
               </svg>
             )}
           </button>
+          
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden w-9 h-9 rounded-full bg-foreground/5 flex flex-col items-center justify-center gap-[4px] shrink-0"
+            aria-label="Toggle mobile menu"
+          >
+            <span className={`block w-4 h-[2px] bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
+            <span className={`block w-4 h-[2px] bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-4 h-[2px] bg-foreground transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
+          </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.nav
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden overflow-hidden bg-background/95 backdrop-blur-md border-b border-foreground/10 absolute top-full left-0 w-full"
+          >
+            <div className="flex flex-col p-4 gap-4">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.href.substring(1);
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block w-full px-4 py-3 rounded-lg text-sm font-bold uppercase tracking-widest transition-colors ${
+                      isActive ? "bg-accent/10 text-accent" : "bg-foreground/5 text-foreground/70 active:bg-foreground/10"
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

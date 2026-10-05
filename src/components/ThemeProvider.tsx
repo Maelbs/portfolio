@@ -15,12 +15,37 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
-    // Check if document has dark class initially (set by the script in head)
-    if (document.documentElement.classList.contains("dark")) {
-      setTheme("dark");
+    // Determine theme from localStorage or default to dark
+    const storedTheme = localStorage.getItem("theme");
+    const initialTheme = storedTheme === "light" ? "light" : "dark";
+    setTheme(initialTheme);
+    
+    // Ensure the DOM matches the theme immediately
+    if (initialTheme === "dark") {
+      document.documentElement.classList.add("dark");
     } else {
-      setTheme("light");
+      document.documentElement.classList.remove("dark");
     }
+
+    // Protect the 'dark' class from being stripped by Next.js during language routing
+    // Next.js patches the <html> tag to update the `lang` attribute, which resets `className`.
+    const observer = new MutationObserver(() => {
+      const isDark = localStorage.getItem("theme") !== "light";
+      const hasDarkClass = document.documentElement.classList.contains("dark");
+      
+      if (isDark && !hasDarkClass) {
+        document.documentElement.classList.add("dark");
+      } else if (!isDark && hasDarkClass) {
+        document.documentElement.classList.remove("dark");
+      }
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const toggleTheme = () => {

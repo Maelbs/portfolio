@@ -21,11 +21,11 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Maël | Creative Developer",
-  description: "Portfolio de Maël, développeur front-end créatif. Projets, expériences et contact.",
+  title: "Maël | Versatile Developer",
+  description: "Portfolio de Maël, développeur fullstack / DevOps créatif et polyvalent. Projets, expériences et contact.",
   openGraph: {
-    title: "Maël | Creative Developer",
-    description: "Portfolio de Maël, développeur front-end créatif. Projets, expériences et contact.",
+    title: "Maël | Versatile Developer",
+    description: "Portfolio de Maël, développeur fullstack / DevOps créatif et polyvalent. Projets, expériences et contact.",
     url: "https://maelbouviersobrino.com",
     siteName: "Maël Portfolio",
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop", 
         width: 1200,
         height: 630,
-        alt: "Maël - Creative Developer Portfolio",
+        alt: "Maël - Versatile Developer Portfolio",
       },
     ],
     locale: "fr_FR",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maël | Creative Developer",
-    description: "Portfolio de Maël, développeur front-end créatif.",
+    title: "Maël | Versatile Developer",
+    description: "Portfolio de Maël, développeur fullstack / DevOps créatif et polyvalent.",
     images: ["https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"],
   },
 };

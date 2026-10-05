@@ -10,24 +10,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: 'Veuillez remplir tous les champs.' }, { status: 400 });
     }
 
-    // Configuration du serveur SMTP (Par exemple Outlook/Hotmail)
-    // Pour que cela fonctionne sur Vercel, vous devez ajouter EMAIL_USER et EMAIL_PASS 
-    // dans les variables d'environnement (Settings > Environment Variables) sur Vercel.
     const transporter = nodemailer.createTransport({
-      host: 'smtp-mail.outlook.com', // Serveur spécifique pour les comptes personnels (Hotmail/Outlook)
+      host: 'smtp.office365.com', 
       port: 587,
-      secure: false, // false pour le port 587
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER, 
         pass: process.env.EMAIL_PASS,
-      },
-      tls: {
-        ciphers: 'SSLv3'
       }
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_USER, // Obligatoire avec Outlook : l'expéditeur doit être votre email
+      from: process.env.EMAIL_USER,
       replyTo: email,
       to: 'maelbouviersobrino@hotmail.com',
       subject: `Nouveau contact depuis le Portfolio - ${name}`,

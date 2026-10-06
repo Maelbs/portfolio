@@ -19,7 +19,7 @@ export function Works() {
         <h2 className="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tighter shrink-0">
           {t("works")}
         </h2>
-        <div className="flex overflow-x-auto pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:pb-0 md:flex-wrap items-center gap-3 sm:gap-4 no-scrollbar">
+        <div className="flex overflow-x-auto overflow-y-hidden py-2 pb-4 -mx-4 px-4 md:overflow-visible md:mx-0 md:px-0 md:py-0 md:pb-0 md:flex-wrap items-center gap-3 sm:gap-4 no-scrollbar">
           {categories.map((category) => (
             <Button
               key={category}
